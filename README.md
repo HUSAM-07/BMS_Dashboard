@@ -21,7 +21,7 @@ BMS Dashboard is an internal management tool designed specifically for the BITS 
 - **Styling**: Tailwind CSS
 - **UI Components**: Custom components built with Radix UI
 - **State Management**: React Hooks
-- **Deployment**: [Specify your deployment platform, e.g., Vercel]
+- **Deployment**: Vercel
 
 ## Getting Started
 
@@ -34,12 +34,12 @@ BMS Dashboard is an internal management tool designed specifically for the BITS 
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/bms-dashboard.git
+   git clone https://github.com/HUSAM-07/bms-dashb.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd bms-dashboard
+   cd bms-dashb
    ```
 
 3. Install dependencies:
@@ -75,7 +75,7 @@ BMS Dashboard is an internal management tool designed specifically for the BITS 
 
 The main navigation component, responsive for both desktop and mobile views.
 
-![MainNav Screenshot](/public/mainnav-screenshot.png)
+![MainNav Screenshot](/public/Home_Page.png)
 
 ### BentoGrid
 
@@ -87,7 +87,7 @@ A grid layout on the homepage showcasing different sections of the dashboard.
 
 A component for displaying and managing tasks.
 
-![TaskList Screenshot](/public/tasklist-screenshot.png)
+![TaskList Screenshot](/public/Tasks_Page.png)
 
 ## Customization
 
@@ -118,4 +118,4 @@ For any queries or support, please contact [Your Contact Information].
 
 ---
 
-Designed and developed with ❤️ by the BITS Motorsports Team
+Designed and developed with ❤️ by the Mohammed Husamuddin, Ex-Head of Business & Marketing, Team BITS Motorsports
