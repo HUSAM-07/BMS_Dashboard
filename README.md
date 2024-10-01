@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# BMS Dashboard
+
+![BMS Dashboard Logo](/public/banner.svg)
+
+## Overview
+
+BMS Dashboard is an internal management tool designed specifically for the BITS Motorsports Team. This web application streamlines various aspects of team management, including task tracking, sponsorship management, and resource organization.
+
+## Features
+
+- **Task Management**: Create, assign, and track tasks across different categories.
+- **Sponsorship Database**: Maintain a centralized database of sponsors and their contributions.
+- **Internal Tools**: Quick access to essential team tools and resources.
+- **Accomplishments Tracker**: Log and showcase team achievements.
+- **Creative Assets Management**: Organize and access team's creative materials.
+- **Feedback System**: Collect and act on advisor feedback.
+
+## Tech Stack
+
+- **Frontend**: Next.js 13 with React
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom components built with Radix UI
+- **State Management**: React Hooks
+- **Deployment**: [Specify your deployment platform, e.g., Vercel]
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or later)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/bms-dashboard.git
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Navigate to the project directory:
+   ```
+   cd bms-dashboard
+   ```
 
-## Learn More
+3. Install dependencies:
+   ```
+   npm install
+   ```
+   or
+   ```
+   yarn install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Run the development server:
+   ```
+   npm run dev
+   ```
+   or
+   ```
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+- `/src/app`: Next.js 13 app directory containing page components
+- `/src/components`: Reusable React components
+- `/src/lib`: Utility functions and content data
+- `/public`: Static assets including images and icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### MainNav
+
+The main navigation component, responsive for both desktop and mobile views.
+
+![MainNav Screenshot](/public/mainnav-screenshot.png)
+
+### BentoGrid
+
+A grid layout on the homepage showcasing different sections of the dashboard.
+
+![BentoGrid Screenshot](/public/bentogrid-screenshot.png)
+
+### TaskList
+
+A component for displaying and managing tasks.
+
+![TaskList Screenshot](/public/tasklist-screenshot.png)
+
+## Customization
+
+- Modify `/src/lib/content.js` to update the content across the application.
+- Adjust styling in individual components or in the global CSS file.
+
+## Deployment
+
+[Add instructions for deploying the application to your preferred platform]
+
+## Contributing
+
+We welcome contributions to the BMS Dashboard! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin feature/your-feature-name`
+5. Submit a pull request
+
+## License
+
+[Specify your license here, e.g., MIT License]
+
+## Contact
+
+For any queries or support, please contact [Your Contact Information].
+
+---
+
+Designed and developed with ❤️ by the BITS Motorsports Team
