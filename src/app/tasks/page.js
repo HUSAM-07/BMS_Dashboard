@@ -4,10 +4,20 @@ import { useState, useCallback } from 'react';
 import { Calendar } from '@/components/ui/calendar';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import TaskList from '@/components/TaskList';
+
+const categories = [
+  { value: "sponsorships", label: "Sponsorships" },
+  { value: "car-design", label: "Car Design" },
+  { value: "marketing", label: "Marketing" },
+  { value: "administrative", label: "Administrative" },
+  { value: "logistics", label: "Logistics" },
+];
 
 export default function TasksPage() {
   const [date, setDate] = useState(new Date());
+  const [category, setCategory] = useState("");
   
   const handleDateSelect = useCallback((newDate) => {
     setDate(newDate);
@@ -30,16 +40,27 @@ export default function TasksPage() {
           <form className="space-y-4">
             <div>
               <label className="block mb-1">Task Name</label>
-              <Input placeholder="Pietro Schirano" />
+              <Input placeholder="Enter task name" />
             </div>
             <div className="text-sm text-gray-500">Add and update tasks here</div>
             <div>
               <label className="block mb-1">Deadline</label>
-              <Input placeholder="Pietro Schirano" />
+              <Input type="date" />
             </div>
             <div>
               <label className="block mb-1">Category</label>
-              <Input placeholder="@skirano" />
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((cat) => (
+                    <SelectItem key={cat.value} value={cat.value}>
+                      {cat.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <Button className="w-full">Publish Task</Button>
           </form>

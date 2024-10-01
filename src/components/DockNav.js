@@ -16,12 +16,12 @@ const navItems = [
 
 export default function DockNav() {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 sm:hidden">
       <Dock>
         {navItems.map((item, index) => (
           <Link key={index} href={item.href}>
             <DockIcon>
-              <item.icon className="w-8 h-8" />
+              <item.icon className="w-6 h-6" />
             </DockIcon>
           </Link>
         ))}

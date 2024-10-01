@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import MainNav from '@/components/MainNav'
-import DockNav from '@/components/DockNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,10 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <MainNav />
-        <main className="container mx-auto p-4 pt-20 pb-24">
-          {children}
-        </main>
-        <DockNav />
+        <main className="pt-16">{children}</main>
       </body>
     </html>
   )
