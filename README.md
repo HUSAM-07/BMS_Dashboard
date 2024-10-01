@@ -1,6 +1,6 @@
 # BMS Dashboard
 
-![BMS Dashboard Logo](/public/banner.svg)
+![BMS Dashboard Logo](/public/Home_Page.png)
 
 ## Overview
 
