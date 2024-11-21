@@ -24,17 +24,36 @@ export default function SponsorshipPage() {
   useEffect(() => {
     if (!user) {
       router.push('/auth');
-    } else {
-      fetchSponsors();
+      return;
     }
+    
+    const loadSponsors = async () => {
+      try {
+        await fetchSponsors();
+      } catch (error) {
+        console.error("Error loading sponsors:", error);
+        if (error.code === 'permission-denied') {
+          router.push('/auth');
+        }
+      }
+    };
+
+    loadSponsors();
   }, [user, router]);
 
   const fetchSponsors = async () => {
-    const querySnapshot = await getDocs(collection(db, "sponsors"));
-    setSponsors(querySnapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })));
+    try {
+      const querySnapshot = await getDocs(collection(db, "sponsors"));
+      setSponsors(querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      })));
+    } catch (error) {
+      toast.error("Error fetching sponsors: " + error.message);
+      if (error.code === 'permission-denied') {
+        router.push('/auth');
+      }
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -50,34 +69,26 @@ export default function SponsorshipPage() {
     try {
       if (editingSponsor) {
         await updateDoc(doc(db, "sponsors", editingSponsor.id), sponsorData);
-        toast("Sponsor updated successfully");
+        toast.success("Sponsor updated successfully");
       } else {
         await addDoc(collection(db, "sponsors"), sponsorData);
-        toast("Sponsor added successfully");
+        toast.success("Sponsor added successfully");
       }
       setIsOpen(false);
       setEditingSponsor(null);
       fetchSponsors();
     } catch (error) {
-      toast({ 
-        title: "Error", 
-        description: error.message,
-        variant: "destructive"
-      });
+      toast.error(error.message);
     }
   };
 
   const handleDelete = async (id) => {
     try {
       await deleteDoc(doc(db, "sponsors", id));
-      toast("Sponsor deleted successfully");
+      toast.success("Sponsor deleted successfully");
       fetchSponsors();
     } catch (error) {
-      toast({ 
-        title: "Error", 
-        description: error.message,
-        variant: "destructive"
-      });
+      toast.error(error.message);
     }
   };
 
